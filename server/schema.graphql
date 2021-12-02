@@ -1,0 +1,33 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Author {
+    firstName: String!
+    id: ID!
+    lastName: String!
+}
+
+type Book {
+    author: Author
+    description: String!
+    id: ID!
+    title: String!
+}
+
+type Mutation {
+    addBook(book: BookInput!): Boolean!
+}
+
+type Query {
+    getAllBooks: [Book]!
+    getBook(id: ID!): Book!
+}
+
+input BookInput {
+    description: String!
+    title: String!
+}
